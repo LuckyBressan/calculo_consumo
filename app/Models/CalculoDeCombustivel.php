@@ -7,12 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class CalculoDeCombustivel extends Model
 {
+    public function combustivel() {
+        return $_GET['combustivel'];
+    }
     public function calcular() {
+        $valorcombustivel = $_GET['valorcombustivel'];
         $distancia = $_GET['distancia'];
         $autonomia = $_GET['autonomia'];
 
-        $valorgasolina = 4.80;
-        $consumoGasolina = ($distancia / $autonomia) * $valorgasolina;
+        $consumoGasolina = ($distancia / $autonomia) * $valorcombustivel;
 
         return $consumoGasolina;
     }

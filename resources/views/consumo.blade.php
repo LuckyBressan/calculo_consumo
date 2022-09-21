@@ -14,10 +14,7 @@
             <h2>Instruções</h2>
             <div class="conteudo-painel">
                 <p>Essa aplicação tem a finalidade de demonstrar os valores que serão gastos com combustivel (te vira)</p>
-                <p>Os combustíveis:</p>
-                <ul>
-                    <li><b>Gasolina: R$ 4,99</b></li>
-                </ul>
+                
             </div>
         </div>
 
@@ -25,6 +22,15 @@
             <h2>Calculo do valor (R$) do consumo</h2>
             <div class="conteudo-painel">
                 <form action="{{url('/gasto')}}" method="get">
+                    <label for="combustivel">Combustível:</label><br>
+                    <select name="combustivel" class="campoTexto" id="combustivel">
+                        <option value="00">**selecione**</option>
+                        <option value="Gasolina">Gasolina</option>
+                        <option value="Etanol">Etanol</option>
+                        <option value="Diesel">Diesel</option>
+                    </select>
+                    <label for="valorcombustivel">Valor:</label>
+                    <input type="number" name="valorcombustivel" step="0.01" class="campoTexto" required>
                     <label for="distancia">Distância em Km a ser percorrido</label>
                     <input type="number" class="campoTexto" name="distancia" required>
 

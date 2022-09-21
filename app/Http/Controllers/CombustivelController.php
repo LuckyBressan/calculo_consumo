@@ -14,9 +14,11 @@ class CombustivelController extends Controller
 
     public function gasto() {
         $CalculoDeCombustivel = new CalculoDeCombustivel();
+
+        $combustivel = $CalculoDeCombustivel->combustivel();
         $valor = $CalculoDeCombustivel->calcular();
 
-        return view('resultado', ['valor'=>$valor]);
+        return view('resultado', ['combustivel'=>$combustivel,'valor'=>$valor]);
 
     }
 }
